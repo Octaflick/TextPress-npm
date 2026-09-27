@@ -1,0 +1,29 @@
+{
+  "name": "textpress-wasm",
+  "version": "1.0.0",
+  "description": "WebAssembly bindings for the TextPress compression engine",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build:wasm": "node scripts/build-wasm.mjs",
+    "package": "node scripts/package.mjs",
+    "build": "npm run build:wasm && npm run package",
+    "test": "node --test test/*.test.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED",
+  "sideEffects": false
+}
